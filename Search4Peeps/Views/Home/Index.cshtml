@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search4Peeps!</h2>
+@using (Ajax.BeginForm("ShowPeeps", "Home",
+     new AjaxOptions {
+         HttpMethod = "POST",
+         LoadingElementId = "waitImage",
+         OnBegin = "tclives.peeps.onBeginSearch",
+         OnSuccess = "tclives.peeps.onSuccessSearch",
+         OnComplete = "tclives.peeps.onCompleteSearch",
+         OnFailure = "tclives.peeps.onFailureSearch"
+     }
+)) {
+<h3>A Listing of Very Impressive Peeps Including Essential Information</h3>
+<h4>
+    @Html.TextBox("txtName", null, new { @class = "form-control", @placeholder = "Name of peep(s)" }) <br />
+    <input class="btn btn-primary" type="submit" value="Find Peep(s)" />
+    Add Delay? @Html.CheckBox("chkDelay")
+</h4>
+}
+<br />
+<h4 id="waitMessage">Please enjoy this pleasing clip while we fetch your peeps!</h4>
+<img id="waitImage" src="~/Images/200.gif" alt="A silly but pleasing clip about a dangerous bunny" />
+<br />
+<div id="searchResult" class="alt-table-responsive">
+    <table id="tblPeeps" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th class="address-col">Address</th>
+                <th class="multiline-col">Interests</th>
+                <th>Has<br/>Shrubbery</th>
+                <th>Swallow<br />IQ</th>
+                <th>Favorite<br />Color</th>
+                <th>Nationality</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div id="searchError">
+    <h3>These are not the peeps you're looking for! Unfortunately, you have experienced an error.</h3>
+    <h4 id="errorMessage"></h4>
+    <img src="~/Images/peeps.jpg" alt="A photo of Peeps marshmallow chicks, he he!" />
+</div>
