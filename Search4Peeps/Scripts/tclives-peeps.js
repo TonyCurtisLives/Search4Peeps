@@ -48,6 +48,5 @@
         peeps.onBeginSearch = onBeginSearch;
         peeps.onCompleteSearch = onCompleteSearch;
         peeps.onFailureSearch = onFailureSearch;
-        peeps.peepsToRows.handleAjaxError = handleAjaxError;
     })(peeps = tclives.peeps || (tclives.peeps = {}));
 })(tclives || (tclives = {}));
