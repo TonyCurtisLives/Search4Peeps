@@ -11,7 +11,7 @@
 * C#
 * MVC
 * Entity Framework
-* SQL Server 2016 LocalDB **(make sure you have 2016 local db installed https://go.microsoft.com/fwlink/?LinkID=799012 and on install select localDb option)**
+* SQL Server Express 2016 LocalDB **(make sure you have Express 2016 local db installed https://go.microsoft.com/fwlink/?LinkID=799012 and on install select localDb option)**
 
 ##### Including
 
