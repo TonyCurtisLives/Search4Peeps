@@ -59,7 +59,7 @@ namespace Search4Peeps.Tests
         }
 
         [TestMethod]
-        public void ShowPeeps_ThrowsException_ReturnsInnerExceptionMessage()
+        public void Show_ThrowsException_ReturnsInnerExceptionMessage()
         {
             var testMessage = "testInnerExceptionMessage";
             Mock.Get(mockPeepService).Setup(p => p.GetPhoto(It.IsAny<int>())).Throws(new Exception(string.Empty, new Exception(testMessage)));
@@ -68,7 +68,7 @@ namespace Search4Peeps.Tests
         }
 
         [TestMethod]
-        public void ShowPeeps_GivenEmptyImage_ReturnsNull()
+        public void Show_GivenEmptyImage_ReturnsNull()
         {
             Mock.Get(mockPeepService).Setup(p => p.GetPhoto(photoId)).Returns<FileStreamResult>(null);
             var actReturn = CallShow(photoId);
